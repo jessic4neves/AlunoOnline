@@ -20,6 +20,7 @@ public class Disciplina implements Serializable {
 
     private String name;
 
+
     public void setName(String x) {this.name = x; }
 
     public String getName() {return this.name; }
