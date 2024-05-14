@@ -10,32 +10,18 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Professor implements Serializable {
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String email;
 
-    public void setName(String x) {
-        this.name = x;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setEmail(String x) {
-        this.email = x;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
 }
