@@ -76,7 +76,7 @@ public class MatriculaAlunoService {
         List<MatriculaAluno> matriculasDoAluno = matriculaAlunoRepository.findByStudentId(studentId);
 
         if (matriculasDoAluno.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Esse aluno não possui matriculas");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "O aluno não possui matriculas");
         }
 
         HistoricoAlunoResponse historico = new HistoricoAlunoResponse();
@@ -92,7 +92,7 @@ public class MatriculaAlunoService {
             disciplinasAlunoResponse.setGrade1(matricula.getGrade1());
             disciplinasAlunoResponse.setGrade2(matricula.getGrade2());
 
-            //FAZER CALCULO DA MEDIA EM OUTRO METODO
+            // MEDIA EM OUTRO METODO
             if (matricula.getGrade1() != null && matricula.getGrade2() != null){
                 disciplinasAlunoResponse.setAverage((matricula.getGrade1() + matricula.getGrade2()) / 2);
             } else {
