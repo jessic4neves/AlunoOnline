@@ -1,8 +1,10 @@
 package br.com.alunoonline.api.service;
 
 
+import br.com.alunoonline.api.dtos.CriarAlunoRequest;
 import br.com.alunoonline.api.model.Aluno;
 import br.com.alunoonline.api.repository.AlunoRepository;
+import br.com.alunoonline.api.repository.FinanceiroAlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -17,8 +19,13 @@ public class AlunoService {
     @Autowired
     AlunoRepository alunoRepository;
 
-    public void create(Aluno aluno) {
-        alunoRepository.save(aluno);
+    @Autowired
+    FinanceiroAlunoRepository financeiroAlunoRepository;
+    public void create(CriarAlunoRequest criarAlunoRequest) {
+
+        Aluno alunoSaved = alunoRepository.save(
+                new Aluno()
+        ); //Criar o item financeiro desse aluno salvo
     }
 
     public List<Aluno> findAll () {
