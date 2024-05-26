@@ -21,7 +21,7 @@ public class AlunoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody CriarAlunoRequest criarAlunoRequest) {
-        alunoService.create(CriarAlunoRequest);
+        alunoService.create(criarAlunoRequest);
     }
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)

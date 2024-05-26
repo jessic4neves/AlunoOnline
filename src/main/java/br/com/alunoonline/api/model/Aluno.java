@@ -19,7 +19,7 @@ public class Aluno implements Serializable {
     private String name;
     private String email;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "course_id")
     private Curso course;
 
